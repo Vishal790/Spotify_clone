@@ -79,7 +79,7 @@ const SongList = ({
           placeholder="Search Song, Artist"
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-[100%] p-2 rounded-md pr-10 bg-white outline-none bg-opacity-10"
+          className="w-[100%] p-2 rounded-md pr-10 text-white text-opacity-90 bg-white outline-none bg-opacity-10"
         />
         <span className="absolute top-1/2 transform -translate-x-10 -translate-y-1/2 text-xl font-bold text-gray-400">
           <CiSearch />

@@ -163,7 +163,7 @@ function App() {
             />
           </div>
           <MusicPlayer
-            song={selectedSong || { name: "Select a song" }}
+            song={selectedSong || { name: "Loading Songs ..." }}
             isPlaying={isPlaying}
             onPlayPause={handlePlayPause}
             onNext={handleNext}

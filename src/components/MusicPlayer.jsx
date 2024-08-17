@@ -11,7 +11,7 @@ import {
 import { IoIosMore } from "react-icons/io";
 
 const MusicPlayer = ({
-  song = { name: "Select a song", artist: "", cover: "", url: "" },
+  song = { name: "", artist: "", cover: "", url: "" },
   isPlaying,
   onPlayPause,
   onNext,
@@ -77,23 +77,24 @@ const MusicPlayer = ({
 
   return (
     <div className="  lg:w-[40%] w-10/12 mx-auto  lg:p-6 flex flex-col mt-16">
-      
       <div className="text-white mb-6">
         <h2 className="text-3xl mb-2 font-bold">
-          {song.name ? song.name : "Select a Song"}
+          {song.name ? song.name : "Loading Songs..."}
         </h2>
         <p className="text-sm text-gray-400">{song.artist}</p>
       </div>
 
-      <img
-        src={
-          song.cover
-            ? `https://cms.samespace.com/assets/${song.cover}`
-            : "https://via.placeholder.com/150"
-        } // Placeholder image
-        alt={song.name}
-        className=" h-[300px] lg:h-auto lg:w-full   lg:aspect-[11/12] object-cover rounded-lg mb-6"
-      />
+      {song.cover ? (
+        <img
+          src={`https://cms.samespace.com/assets/${song.cover}`}
+          alt={song.name}
+          className=" h-[300px] lg:h-auto lg:w-full   lg:aspect-[11/12] object-cover rounded-lg mb-6"
+        />
+      ) : (
+        <div className=" flex items-center justify-center min-h-[300px] lg:h-auto lg:w-full   lg:aspect-[11/12] object-cover rounded-lg mb-6">
+          <div className="spinner"></div>
+        </div>
+      )}
 
       <div
         className="relative w-full h-1 bg-gray-600 rounded-lg cursor-pointer mb-4"
