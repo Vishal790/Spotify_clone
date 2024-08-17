@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "../assets/logo.png";
-import Profile from "../assets/profile.png";
+import Logo from "../assets/Logo.png";
+import Profile from "../assets/Profile.png";
 
 const Sidebar = () => {
   return (
